@@ -3,13 +3,77 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Indika House — Indian Cuisine</title>
-<meta name="description" content="Indika House — authentic Indian cuisine made with fresh ingredients and traditional flavor." />
+
+<!--
+  SEO NOTE: every "https://www.indikahousebk.com" URL below is a placeholder.
+  Once you buy a real domain, find-and-replace that string across all pages
+  (and in robots.txt / sitemap.xml) with your actual domain. See SEO-NOTES.md.
+-->
+
+<title>Indika House | Indian Restaurant in Brooklyn, NY</title>
+<meta name="description" content="Indika House is an authentic Indian restaurant on Broadway in Brooklyn, NY, serving fresh curries, tandoori, biryani, and more for dine-in, pickup, and delivery." />
+<link rel="canonical" href="https://www.indikahousebk.com/" />
+
+<meta property="og:type" content="restaurant" />
+<meta property="og:site_name" content="Indika House" />
+<meta property="og:title" content="Indika House | Indian Restaurant in Brooklyn, NY" />
+<meta property="og:description" content="Authentic Indian cuisine on Broadway in Brooklyn — dine-in, pickup, and delivery." />
+<meta property="og:image" content="https://www.indikahousebk.com/images/logo.png" />
+<meta property="og:url" content="https://www.indikahousebk.com/" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Indika House | Indian Restaurant in Brooklyn, NY" />
+<meta name="twitter:description" content="Authentic Indian cuisine on Broadway in Brooklyn — dine-in, pickup, and delivery." />
+<meta name="twitter:image" content="https://www.indikahousebk.com/images/logo.png" />
 
 <link rel="icon" type="image/png" href="images/logo.png" />
 <link rel="apple-touch-icon" href="images/logo.png" />
 
 <link rel="stylesheet" href="css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "https://www.indikahousebk.com/",
+  "name": "Indika House",
+  "image": "https://www.indikahousebk.com/images/logo.png",
+  "url": "https://www.indikahousebk.com/",
+  "telephone": "+1-718-484-3600",
+  "servesCuisine": "Indian",
+  "priceRange": "$$",
+  "menu": "https://www.indikahousebk.com/menu.html",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "943 Broadway",
+    "addressLocality": "Brooklyn",
+    "addressRegion": "NY",
+    "postalCode": "11206",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "11:30",
+      "closes": "22:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Friday", "Saturday"],
+      "opens": "11:30",
+      "closes": "23:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.tiktok.com/@indikahouse",
+    "https://www.instagram.com/indikahouse/",
+    "https://www.grubhub.com/restaurant/indika-house-943-broadway-brooklyn/1721730",
+    "https://www.doordash.com/store/indika-house-brooklyn-831916/39989585/",
+    "https://www.ubereats.com/store/indika-house/-R9x24MRReeXUAPD_mfpsg"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -52,7 +116,8 @@
   <section class="hero">
     <div class="wrap">
       <h1 class="hero-title hero-title--logo">
-        <span class="line line-1">
+        <span class="sr-only">Indika House — Indian Restaurant in Brooklyn, NY</span>
+        <span class="line line-1" aria-hidden="true">
           <img class="hero-logo-img" src="images/logo.png" alt="Indika House — Indian Cuisine" />
         </span>
       </h1>
@@ -119,7 +184,9 @@
   </section>
 
   <section class="interior" aria-label="Restaurant interior">
-    <div class="interior-photo"></div>
+    <div class="interior-photo-frame">
+      <img class="interior-photo" src="images/interior.jpg" alt="Colorful hand-painted mural and dining room inside Indika House, an Indian restaurant on Broadway in Brooklyn, NY" loading="lazy" width="1000" height="750" />
+    </div>
 
     <div class="interior-caption wrap">
       <span class="interior-caption-eyebrow">Est. on Broadway</span>
