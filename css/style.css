@@ -427,6 +427,37 @@ button { font-family: inherit; cursor: pointer; }
   text-align: center;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(23, 20, 15, 0.22);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  z-index: 50;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover { background: var(--red-dark); }
+
+@media (max-width: 760px) {
+  .back-to-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+}
+
 /* ---------------------------------------------------------
    Contact page
 --------------------------------------------------------- */

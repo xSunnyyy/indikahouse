@@ -8,3 +8,15 @@ document.addEventListener("visibilitychange", () => {
     el.style.animation = "";
   });
 });
+
+const backToTop = document.getElementById("backToTop");
+if (backToTop) {
+  const toggleBackToTop = () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 480);
+  };
+  toggleBackToTop();
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
