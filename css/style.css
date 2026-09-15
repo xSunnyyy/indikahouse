@@ -233,38 +233,43 @@ button { font-family: inherit; cursor: pointer; }
 .btn-view-menu {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 28px;
+  gap: 18px;
+  padding: 6px 6px 6px 28px;
   height: 56px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 4px;
   font-weight: 600;
   font-size: 15px;
+  color: var(--ink);
   white-space: nowrap;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .btn-view-menu:hover {
   background: var(--ink);
   color: var(--cream);
   transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 20, 15, 0.16);
 }
 
-.btn-arrow {
+.btn-view-menu-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 4px;
   background: var(--red);
   color: #fff;
   flex-shrink: 0;
-  transition: background 0.2s ease, transform 0.25s ease;
+  transition: background 0.25s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.btn-arrow:hover {
+.btn-view-menu:hover .btn-view-menu-icon {
   background: var(--red-dark);
-  transform: translateY(-2px) rotate(45deg);
+  transform: rotate(45deg);
+}
+.btn-view-menu:active .btn-view-menu-icon {
+  transform: rotate(45deg) scale(0.92);
 }
 
 /* ---------------------------------------------------------
