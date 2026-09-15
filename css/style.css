@@ -137,18 +137,52 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
   flex-shrink: 0;
 }
-.icon-link {
-  display: inline-flex;
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
   background: none;
   border: none;
-  color: inherit;
-  padding: 0;
-  font-size: 15px;
-  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0;
 }
-.icon-link:hover { color: var(--red-dark); }
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.menu-toggle.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.is-active span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 16px 28px rgba(23, 20, 15, 0.1);
+}
+.mobile-nav.is-open { display: flex; }
+.mobile-nav a {
+  padding: 16px 28px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+  font-weight: 600;
+}
+.mobile-nav a:first-child { border-top: none; }
+.mobile-nav a.active { color: var(--red-dark); }
 
 /* ---------------------------------------------------------
    Hero
@@ -271,6 +305,91 @@ button { font-family: inherit; cursor: pointer; }
 .btn-view-menu:active .btn-view-menu-icon {
   transform: rotate(45deg) scale(0.92);
 }
+
+/* ---------------------------------------------------------
+   Order-online links (Grubhub / DoorDash / Uber Eats)
+--------------------------------------------------------- */
+.order-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 34px 28px;
+}
+
+.order-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 20, 15, 0.1);
+}
+
+.order-card-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: #fff;
+}
+.order-card-grubhub .order-card-badge { background: #f63440; }
+.order-card-grubhub:hover { border-color: #f63440; }
+.order-card-doordash .order-card-badge { background: #eb1700; }
+.order-card-doordash:hover { border-color: #eb1700; }
+.order-card-ubereats .order-card-badge { background: #06c167; }
+.order-card-ubereats:hover { border-color: #06c167; }
+.order-card-viewmenu .order-card-badge { background: var(--red); }
+.order-card-viewmenu:hover { border-color: var(--red); }
+
+.mobile-only-card { display: none; }
+
+.order-card-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.order-card-label {
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(23, 20, 15, 0.5);
+}
+.order-card-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.order-card-arrow {
+  margin-left: auto;
+  color: rgba(23, 20, 15, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.order-card:hover .order-card-arrow {
+  transform: translate(2px, -2px);
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------------
+   Site footer
+--------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0;
+}
+.site-footer .social-links { gap: 32px; }
 
 /* ---------------------------------------------------------
    Simple page hero (Menu / Contact placeholders)
@@ -427,6 +546,37 @@ button { font-family: inherit; cursor: pointer; }
   text-align: center;
 }
 
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(23, 20, 15, 0.22);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  z-index: 50;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover { background: var(--red-dark); }
+
+@media (max-width: 760px) {
+  .back-to-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+}
+
 /* ---------------------------------------------------------
    Contact page
 --------------------------------------------------------- */
@@ -578,17 +728,21 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 760px) {
   .header-inner { height: 68px; }
   .main-nav { display: none; }
-  .header-actions .icon-link span { display: none; }
   .logo-text { font-size: 16px; }
+  .menu-toggle { display: flex; }
 
   .hero { padding-top: 32px; }
+  .order-links {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+  .mobile-only-card { display: flex; }
   .hero-lower {
     grid-template-columns: 1fr;
     padding: 26px 20px 44px;
     gap: 24px;
   }
-  .hero-cta { width: 100%; }
-  .btn-view-menu { flex: 1; }
+  .hero-cta { display: none; }
 
   .interior-photo { aspect-ratio: 4 / 3; background-position: center 25%; }
   .interior-caption { bottom: 40px; }

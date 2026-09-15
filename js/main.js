@@ -8,3 +8,32 @@ document.addEventListener("visibilitychange", () => {
     el.style.animation = "";
   });
 });
+
+const backToTop = document.getElementById("backToTop");
+if (backToTop) {
+  const toggleBackToTop = () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 480);
+  };
+  toggleBackToTop();
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileNav.classList.toggle("is-open");
+    menuToggle.classList.toggle("is-active", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+  mobileNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileNav.classList.remove("is-open");
+      menuToggle.classList.remove("is-active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
