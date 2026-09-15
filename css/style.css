@@ -505,6 +505,23 @@ button { font-family: inherit; cursor: pointer; }
   text-align: right;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+.social-link svg { flex-shrink: 0; }
+.social-link:hover { color: var(--red-dark); }
+
 /* ---------------------------------------------------------
    Interior photo section
 --------------------------------------------------------- */
