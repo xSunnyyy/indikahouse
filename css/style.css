@@ -297,6 +297,137 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ---------------------------------------------------------
+   Menu page
+--------------------------------------------------------- */
+.menu-hero {
+  padding-top: 56px;
+  padding-bottom: 34px;
+}
+
+.menu-hero-note {
+  max-width: 480px;
+  margin: 20px 0 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: rgba(23, 20, 15, 0.75);
+}
+
+.menu-jumpnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin: 30px 0 0;
+}
+.menu-jumpnav a {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.menu-jumpnav a:hover {
+  border-color: var(--red);
+  color: var(--red-dark);
+}
+
+.menu-shell {
+  padding-top: 56px;
+  padding-bottom: 80px;
+}
+
+.menu-category {
+  scroll-margin-top: 24px;
+  padding-top: 8px;
+  margin-top: 56px;
+}
+.menu-category:first-child { margin-top: 0; }
+
+.menu-category-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 38px);
+  color: var(--red);
+  line-height: 1.05;
+}
+
+.menu-category-note {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  font-style: italic;
+  color: rgba(23, 20, 15, 0.6);
+}
+
+.menu-category-items {
+  margin-top: 22px;
+}
+
+.menu-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.menu-category-items .menu-item:last-child { border-bottom: none; }
+
+.menu-item-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.menu-item-name {
+  font-weight: 700;
+  font-size: 15.5px;
+  flex-shrink: 0;
+}
+
+.tag-best {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+
+.menu-item-leader {
+  flex: 1;
+  border-bottom: 1px dotted rgba(23, 20, 15, 0.35);
+  margin-bottom: 5px;
+  min-width: 24px;
+}
+
+.menu-item-price {
+  font-weight: 600;
+  font-size: 15px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu-item-desc {
+  margin: 6px 0 0;
+  max-width: 560px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(23, 20, 15, 0.7);
+}
+
+.menu-footnote {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: rgba(23, 20, 15, 0.55);
+  text-align: center;
+}
+
+/* ---------------------------------------------------------
    Contact page
 --------------------------------------------------------- */
 .contact-hero {
@@ -444,4 +575,7 @@ button { font-family: inherit; cursor: pointer; }
 
   .interior-photo { aspect-ratio: 4 / 3; background-position: center 25%; }
   .interior-caption { bottom: 40px; }
+
+  .menu-item-name { font-size: 15px; }
+  .menu-item-leader { min-width: 14px; }
 }
