@@ -103,6 +103,7 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  grid-column: 1;
   justify-self: start;
 }
 .logo-mark { color: var(--red); display: flex; }
@@ -120,6 +121,7 @@ button { font-family: inherit; cursor: pointer; }
   gap: 36px;
   font-size: 15px;
   font-weight: 500;
+  grid-column: 2;
   justify-self: center;
 }
 .main-nav a {
@@ -152,6 +154,7 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 15px;
   font-weight: 500;
   flex-shrink: 0;
+  grid-column: 3;
   justify-self: end;
 }
 .menu-toggle {
