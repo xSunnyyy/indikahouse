@@ -279,6 +279,84 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ---------------------------------------------------------
+   Contact page
+--------------------------------------------------------- */
+.contact-hero {
+  min-height: calc(100vh - 85px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 0;
+}
+
+.contact-center {
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+}
+
+.page-title--center { text-align: center; }
+
+.contact-lines {
+  margin: 34px 0 0;
+}
+
+.contact-line {
+  margin: 0 0 12px;
+  font-size: 17px;
+}
+.contact-line:last-child { margin-bottom: 0; }
+
+.contact-label {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.contact-value a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+.contact-value a:hover { color: var(--red-dark); }
+
+.contact-rule {
+  height: 1px;
+  background: var(--line);
+  margin: 40px auto;
+  width: 100%;
+  max-width: 340px;
+}
+
+.hours-title {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--ink);
+}
+
+.hours-list {
+  margin: 0 auto;
+  max-width: 360px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14.5px;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-row dt { font-weight: 600; }
+.hours-row dd {
+  margin: 0;
+  color: rgba(23, 20, 15, 0.75);
+  text-align: right;
+}
+
+/* ---------------------------------------------------------
    Interior photo section
 --------------------------------------------------------- */
 .interior {
