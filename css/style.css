@@ -91,9 +91,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .header-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
   height: 84px;
 }
@@ -103,6 +103,7 @@ button { font-family: inherit; cursor: pointer; }
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  justify-self: start;
 }
 .logo-mark { color: var(--red); display: flex; }
 .logo-text {
@@ -119,6 +120,7 @@ button { font-family: inherit; cursor: pointer; }
   gap: 36px;
   font-size: 15px;
   font-weight: 500;
+  justify-self: center;
 }
 .main-nav a {
   display: inline-flex;
@@ -145,10 +147,12 @@ button { font-family: inherit; cursor: pointer; }
 .header-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 22px;
   font-size: 15px;
   font-weight: 500;
   flex-shrink: 0;
+  justify-self: end;
 }
 .menu-toggle {
   display: none;
