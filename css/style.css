@@ -137,19 +137,6 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
   flex-shrink: 0;
 }
-.icon-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: none;
-  color: inherit;
-  padding: 0;
-  font-size: 15px;
-  font-weight: 500;
-}
-.icon-link:hover { color: var(--red-dark); }
-
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -362,6 +349,10 @@ button { font-family: inherit; cursor: pointer; }
 .order-card-doordash:hover { border-color: #eb1700; }
 .order-card-ubereats .order-card-badge { background: #06c167; }
 .order-card-ubereats:hover { border-color: #06c167; }
+.order-card-viewmenu .order-card-badge { background: var(--red); }
+.order-card-viewmenu:hover { border-color: var(--red); }
+
+.mobile-only-card { display: none; }
 
 .order-card-text {
   display: flex;
@@ -737,7 +728,6 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 760px) {
   .header-inner { height: 68px; }
   .main-nav { display: none; }
-  .header-actions .icon-link span { display: none; }
   .logo-text { font-size: 16px; }
   .menu-toggle { display: flex; }
 
@@ -746,13 +736,13 @@ button { font-family: inherit; cursor: pointer; }
     grid-template-columns: 1fr;
     padding: 24px 20px;
   }
+  .mobile-only-card { display: flex; }
   .hero-lower {
     grid-template-columns: 1fr;
     padding: 26px 20px 44px;
     gap: 24px;
   }
-  .hero-cta { width: 100%; }
-  .btn-view-menu { flex: 1; }
+  .hero-cta { display: none; }
 
   .interior-photo { aspect-ratio: 4 / 3; background-position: center 25%; }
   .interior-caption { bottom: 40px; }
