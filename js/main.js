@@ -37,3 +37,15 @@ if (menuToggle && mobileNav) {
     });
   });
 }
+
+// Smooth-scrolls same-page "#id" links (logo, menu jump nav) without
+// adding the fragment to the URL bar or browser history.
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const id = link.getAttribute("href").slice(1);
+    const target = id ? document.getElementById(id) : document.body;
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
