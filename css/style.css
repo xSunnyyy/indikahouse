@@ -106,7 +106,6 @@ button { font-family: inherit; cursor: pointer; }
   grid-column: 1;
   justify-self: start;
 }
-.logo-mark { color: var(--red); display: flex; }
 .logo-text {
   font-family: var(--font-display);
   font-size: 19px;
