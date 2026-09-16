@@ -38,7 +38,7 @@ if (menuToggle && mobileNav) {
   });
 }
 
-// Smooth-scrolls same-page "#id" links (logo, menu jump nav) without
+// Smooth-scrolls same-page "#id" links (logo, menu sidebar nav) without
 // adding the fragment to the URL bar or browser history.
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
@@ -49,3 +49,26 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+
+// Highlights the menu sidebar link for whichever category is in view.
+const menuSidebar = document.querySelector(".menu-sidebar");
+if (menuSidebar) {
+  const sidebarLinks = new Map(
+    Array.from(menuSidebar.querySelectorAll("a")).map((a) => [a.getAttribute("href").slice(1), a])
+  );
+  const categories = document.querySelectorAll(".menu-category[id]");
+  const setActive = (id) => {
+    sidebarLinks.forEach((a) => a.classList.remove("active"));
+    const link = sidebarLinks.get(id);
+    if (link) link.classList.add("active");
+  };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-15% 0px -70% 0px" }
+  );
+  categories.forEach((section) => observer.observe(section));
+}
